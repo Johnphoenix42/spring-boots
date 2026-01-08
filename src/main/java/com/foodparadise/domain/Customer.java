@@ -2,20 +2,22 @@ package com.foodparadise.domain;
 
 import jakarta.persistence.*;
 
-import com.foodparadise.order.FoodOrder;
-
 @Entity
 @Table(name = "customer")
 public class Customer {
 
     private @Id @GeneratedValue(strategy = GenerationType.AUTO) Long id;
+    private String email;
+    private String password;
     private String firstName;
     private String lastName;
-    private FoodOrder[] foodOrders;
+    private Long foodOrderID;
 
     protected Customer(){}
 
-    public Customer(String firstName, String lastName) {
+    public Customer(String email, String passwordString, String firstName, String lastName) {
+        this.email = email;
+        this.password = passwordString;
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -36,12 +38,12 @@ public class Customer {
         this.lastName = lastName;
     }
 
-    public FoodOrder[] getFoodOrders() {
-        return foodOrders;
+    public Long getFoodOrders() {
+        return foodOrderID;
     }
 
-    public void setFoodOrders(FoodOrder[] foodOrders) {
-        this.foodOrders = foodOrders;
+    public void setFoodOrders(Long foodOrders) {
+        this.foodOrderID = foodOrders;
     }
 
     @Override
@@ -53,5 +55,21 @@ public class Customer {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

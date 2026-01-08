@@ -1,26 +1,39 @@
 package com.foodparadise;
 
+import com.foodparadise.domain.Customer;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller()
 public class DashboardController {
+
+    private final CustomerRepository customerRepository;
+
+    public DashboardController(CustomerRepository customerRepository) {
+        this.customerRepository = customerRepository;
+    }
 
     @PostMapping("/auth")
     public String authenticate(@RequestParam(defaultValue = "signin") String type,
                                @RequestParam(defaultValue = "") String destination,
                                AuthForm form,
-                               Model model) {
-        model.addAttribute("username", form.getEmail());
+                               RedirectAttributes redirectAttributes) {
+        redirectAttributes.addAttribute("username", form.getEmail());
         //check password
-        if (!form.getPassword().matches("\\w+[0-9]*")) {
-            model.addAttribute("authMessage", "wrong password");
+        System.out.println(customerRepository.count());
+        for (Customer customer : customerRepository.findAll()) {
+            if (!form.getPassword().equals(customer.getPassword())) continue;
+
+            System.out.println(customer);
+            redirectAttributes.addFlashAttribute("authMessage", "wrong password");
             if (type.equals("signin")) return "redirect:/signin";
             else return "redirect:/signup";
         }
+        //if (!form.getPassword().matches("\\w+[0-9]*")) {
         return "redirect:/" + destination;
     }
 
