@@ -49,8 +49,8 @@ public class Customer {
     @Override
     public String toString() {
         return String.format(
-                "Customer[id=%d, firstName='%s', lastName='%s']",
-                id, firstName, lastName);
+                "Customer[id=%d, firstName='%s', lastName='%s', email='%s', password='%s']",
+                id, firstName, lastName, email, password);
     }
 
     public void setId(Long id) {

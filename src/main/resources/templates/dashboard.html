@@ -6,11 +6,8 @@
         <title>FoodParadise | Dashboard</title>
     </head>
     <body>
-        <div th:if="${authMessage}">
-            <p th:if="${authMessage}"></p>
-        </div>
-        <p th:text="|Hello, ${name}!|"></p>
-        <p th:text="${param.username}"></p>
-        <p>This is a text reloaded.</p>
+        <!--<p th:text="|Hello, ${name}!|"></p>-->
+        <p th:text="${param.name}"></p>
+        <p>Welcome to your dashboard</p>
     </body>
 </html>

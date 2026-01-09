@@ -20,9 +20,9 @@ public class ServingWebContentApplication {
 	@Bean
 	public CommandLineRunner initDatabase(CustomerRepository repository) {
 		Customer bilboBaggins = new Customer("johnworkbackup042@gmail.com", "flipperachi", "Bilbo", "Baggins" );
-		Customer itachiUchiha = new Customer("johnworkbackup042@gmail.com", "flipperachi", "Itachi", "Uchiha");
-		Customer erenYeager = new Customer("johnworkbackup042@gmail.com", "flipperachi", "Eren", "Yeager");
-		Customer leviAckerman = new Customer("johnworkbackup042@gmail.com", "flipperachi", "Levi", "Ackerman");
+		Customer itachiUchiha = new Customer("johnolamide420@gmail.com", "flipperachi", "Itachi", "Uchiha");
+		Customer erenYeager = new Customer("jstrings619@gmail.com", "flipperachi", "Eren", "Yeager");
+		Customer leviAckerman = new Customer("acedigitalco101@gmail.com", "flipperachi", "Levi", "Ackerman");
 		return args -> {
 			logger.info("Preloading " + repository.save(bilboBaggins));
 			logger.info("Preloading " + repository.save(itachiUchiha));

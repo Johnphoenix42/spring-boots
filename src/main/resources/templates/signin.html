@@ -114,7 +114,10 @@
     </head>
     <body>
         <div id="transparency-mask"></div>
-        <form method="POST" th:action="|/auth?destination=${destination}&type=siginin|" action="/auth">
+        <form method="POST" th:action="|/auth?destination=${destination}&type=signin&source=${source}|" action="/auth">
+            <div th:if="${authMessage}">
+                <p th:if="${authMessage}"></p>
+            </div>
             <h1 th:text="'Welcome back to ' + FoodParadise">Welcome back to FoodParadise</h1>
             <div class="container">
                 <div class="block">
