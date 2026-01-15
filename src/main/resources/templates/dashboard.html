@@ -4,10 +4,58 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>FoodParadise | Dashboard</title>
+        <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.5.1/css/all.min.css}">
     </head>
     <body>
         <!--<p th:text="|Hello, ${name}!|"></p>-->
-        <p th:text="${param.name}"></p>
-        <p>Welcome to your dashboard</p>
+        <aside>
+            <header>
+                FoodParadise
+            </header>
+            <div>
+                <img src="user-image.jpg" alt="profile image">
+                <p>Simbi Ndoku</p>
+            </div>
+            <nav>
+                <a href="/dashboard" class="fa-solid fa-user">Dashboard</a>
+                <a href="/explore" class="fa-solid fa-user">Explore</a>
+                <a href="/dashboard/settings" class="fa-solid fa-user">Settings</a>
+            </nav>
+        </aside>
+        <main>
+            <header>
+                <div>
+                    <p th:text="|Hello, ${param.name}|">Hello, User</p>
+                    <p>today is Monday, 24th of May 2026</p>
+                </div>
+                <div>
+                    <button>Make an Order</button>
+                </div>
+            </header>
+            <div>
+                <div>
+                    Previous Orders
+                    <div>
+                        Food Order last 1
+                    </div>
+                    <div>
+                        Food Order last 2
+                    </div>
+                    <div>
+                        Food Order last 3
+                    </div>
+                </div>
+
+                <div>
+                    favourites
+                    <div>
+                        Dish favorites
+                    </div>
+                    <div>
+                        Dish favorites
+                    </div>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
