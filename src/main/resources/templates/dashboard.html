@@ -10,44 +10,48 @@
         <!--<p th:text="|Hello, ${name}!|"></p>-->
         <aside>
             <header>
-                FoodParadise
+                <h1>FoodParadise</h1>
+                <div>
+                    <img src="user-image.jpg" alt="profile image">
+                    <p th:text="${param.name}">Simbi Ndoku</p>
+                </div>
             </header>
-            <div>
-                <img src="user-image.jpg" alt="profile image">
-                <p>Simbi Ndoku</p>
-            </div>
             <nav>
-                <a href="/dashboard" class="fa-solid fa-user">Dashboard</a>
-                <a href="/explore" class="fa-solid fa-user">Explore</a>
-                <a href="/dashboard/settings" class="fa-solid fa-user">Settings</a>
+                <a href="/dashboard"><i class="fa-solid fa-user"></i>Dashboard</a>
+                <a href="/explore"><i class="fa-solid fa-user"></i>Explore</a>
+                <a href="/dashboard/orders"><i class="fa-solid fa-user"></i>Orders</a>
+                <a href="/dashboard/my-dishes"><i class="fa-solid fa-user"></i>My Dishes</a>
+                <a href="/dashboard/settings"><i class="fa-solid fa-user"></i>Settings</a>
             </nav>
         </aside>
         <main>
             <header>
-                <div>
-                    <p th:text="|Hello, ${param.name}|">Hello, User</p>
-                    <p>today is Monday, 24th of May 2026</p>
+                <div class="user-greeting-container">
+                    <p class="hello" th:text="|Hello, ${param.name}|">Hello, User</p>
+                    <p class="date">today is Monday, 24th of May 2026</p>
                 </div>
-                <div>
-                    <button>Make an Order</button>
+                <div class="main-top-menu">
+                    <button class="order-cta">Make an Order</button>
                 </div>
             </header>
             <div>
-                <div>
-                    Previous Orders
+                <section id="order-section" class="card-container">
+                    <h2>Previous Orders</h2>
                     <div>
-                        Food Order last 1
+                        <div>
+                            Food Order last 1
+                        </div>
+                        <div>
+                            Food Order last 2
+                        </div>
+                        <div>
+                            Food Order last 3
+                        </div>
                     </div>
-                    <div>
-                        Food Order last 2
-                    </div>
-                    <div>
-                        Food Order last 3
-                    </div>
-                </div>
+                </section>
 
-                <div>
-                    favourites
+                <div id="favorites-section" class="card-container">
+                    <h2>favorites</h2>
                     <div>
                         Dish favorites
                     </div>

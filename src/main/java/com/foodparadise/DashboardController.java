@@ -43,7 +43,7 @@ public class DashboardController {
     @GetMapping("/dashboard")
     public String overviewDashboard(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
                                     Model model) {
-        //model.addAttribute("name", name);
+        model.addAttribute("name", name);
         return "dashboard";
     }
 
