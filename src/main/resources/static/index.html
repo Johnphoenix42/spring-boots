@@ -3,70 +3,129 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>FoodParadise</title>
-        <style>
-            :root {
-                --std-margin: 1rem;
-            }
-            *{box-sizing: border-box;}
-            body {
-                position: relative;
-                margin: 0;
-            }
-            header{
-                display: flex;
-                position: absolute;
-                backdrop-filter: blur(4px);
-                justify-content: space-between;
-                width: calc(100% - var(--std-margin) * 2);
-                padding: 1rem;
-                margin: var(--std-margin);
-                border-radius: 1rem;
-            }
-            nav {
-                min-width: 20rem;
-                width: 60%;
-                max-width: 80%;
-            }
-            nav>ul {
-                display: flex;
-                list-style: none;
-                justify-content: space-around;
-                padding: 0;
-            }
-            main {
-                background: linear-gradient(45deg, green, #29ee00);
-            }
-            .empty-space {
-                width: 100%;
-                height: 8rem;
-            }
-            .hero{
-                text-align: center;
-            }
-            h1 {
-                margin-top: 0;
-            }
-
-        </style>
+        <title>FoodParadise | Nigeria's Best Digital Kitchen</title>
+        <link href="css/index.css" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     </head>
     <body>
+
         <header>
-            <p>FoodParadise</p>
+            <a href="#" class="logo">FoodParadise</a>
             <nav>
                 <ul>
-                    <li><a href="/about">About</a></li>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#menu">Menu</a></li>
+                    <li><a href="#about">About</a></li>
                     <li><a href="/signin?destination=dashboard&source=https://localhost:8080/">Signin</a></li>
-                    <li><a href="/signup?destination=dashboard&source=https://localhost:8080/">Get Started for Free</a></li>
+                    <li><a href="/signup?destination=dashboard&source=https://localhost:8080/" class="btn-nav">Get Started</a></li>
                 </ul>
             </nav>
         </header>
+
         <main>
-            <div class="hero">
-                <div class="empty-space"></div>
-                <h1>Well Made Food With Love</h1>
-                <h2>Nigeria's first digital restaurant</h2>
+            <div class="hero" id="hero">
+                <h1>Well Made Food, With Love</h1>
+                <h2>Experience Nigeria's first fully digital restaurant delivered to your doorstep in minutes.</h2>
+                <a href="#menu" class="btn-hero">Order Now</a>
             </div>
         </main>
+
+        <section id="how-it-works">
+            <div class="section-title">
+                <h3>Easy Steps</h3>
+                <h2>How It Works</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Choose Meal</h3>
+                    <p>Browse our extensive menu of local Nigerian delicacies and continental dishes.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Fast Payment</h3>
+                    <p>Pay securely online or choose payment on delivery options.</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Enjoy Food</h3>
+                    <p>Our riders deliver your food hot and fresh within 30 minutes.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="menu" style="background-color: #ffffff;">
+            <div class="section-title">
+                <h3>Our Favorites</h3>
+                <h2>Popular Dishes</h2>
+            </div>
+            <div class="menu-grid">
+                <div class="food-card">
+                    <img src="images/jollof-rice.jpg" alt="Jollof Rice">
+                    <div class="food-info">
+                        <div class="food-header">
+                            <h3>Smoky Jollof Special</h3>
+                            <span class="price">₦2,500</span>
+                        </div>
+                        <p>Served with fried plantain, grilled chicken and coleslaw.</p>
+                        <button class="add-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Pizza">
+                    <div class="food-info">
+                        <div class="food-header">
+                            <h3>Suya Pizza</h3>
+                            <span class="price">₦4,000</span>
+                        </div>
+                        <p>Large pizza topped with spicy beef suya and onions.</p>
+                        <button class="add-btn">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="food-card">
+                    <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Burger">
+                    <div class="food-info">
+                        <div class="food-header">
+                            <h3>The Lagos Burger</h3>
+                            <span class="price">₦3,200</span>
+                        </div>
+                        <p>Double beef patty, cheese, caramelized onions and secret sauce.</p>
+                        <button class="add-btn">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div>
+                <a href="#" class="logo">FoodParadise</a>
+                <p>Bringing happiness to your table, one meal at a time.</p>
+            </div>
+            <div>
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Careers</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">Help & Support</a></li>
+                    <li><a href="#">Partner with us</a></li>
+                    <li><a href="#">Ride with us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">Facebook</a></li>
+                </ul>
+            </div>
+        </footer>
+
     </body>
 </html>

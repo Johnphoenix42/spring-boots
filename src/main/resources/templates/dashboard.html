@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1"/>
         <title>FoodParadise | Dashboard</title>
+        <link href="/css/dashboard.css" rel="stylesheet"/>
         <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.5.1/css/all.min.css}">
     </head>
     <body>
@@ -12,7 +13,7 @@
             <header>
                 <h1>FoodParadise</h1>
                 <div>
-                    <img src="user-image.jpg" alt="profile image">
+                    <img src="images/user-image.jpg" alt="profile image" />
                     <p th:text="${param.name}">Simbi Ndoku</p>
                 </div>
             </header>
@@ -27,8 +28,8 @@
         <main>
             <header>
                 <div class="user-greeting-container">
-                    <p class="hello" th:text="|Hello, ${param.name}|">Hello, User</p>
-                    <p class="date">today is Monday, 24th of May 2026</p>
+                    <p id="hello" th:text="|Hello, ${param.name}|">Hello, User</p>
+                    <p id="date">today is Monday, 24th of May 2026</p>
                 </div>
                 <div class="main-top-menu">
                     <button class="order-cta">Make an Order</button>
@@ -38,25 +39,39 @@
                 <section id="order-section" class="card-container">
                     <h2>Previous Orders</h2>
                     <div>
-                        <div>
-                            Food Order last 1
+                        <div class="card">
+                            <p>Jollof rice</p>
+                            <p>Date</p>
+                            <span>Status: Processing</span>
                         </div>
-                        <div>
-                            Food Order last 2
+                        <div class="card">
+                            <p>Jollof rice</p>
+                            <p>Date</p>
+                            <span>Status: On the way</span>
                         </div>
-                        <div>
-                            Food Order last 3
+                        <div class="card">
+                            <p>Jollof rice</p>
+                            <p>Date</p>
+                            <span>Status : Delivered</span>
                         </div>
                     </div>
                 </section>
 
                 <div id="favorites-section" class="card-container">
-                    <h2>favorites</h2>
+                    <h2>Dish favorites</h2>
                     <div>
-                        Dish favorites
-                    </div>
-                    <div>
-                        Dish favorites
+                        <div class="card">
+                            <h3>Fried rice</h3>
+                            <span>2300</span>
+                        </div>
+                        <div class="card green">
+                            <h3>Italian Pizza</h3>
+                            <span>2300</span>
+                        </div>
+                        <div class="card purple">
+                            <h3>Lagos Burger</h3>
+                            <span>2300</span>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -11,8 +11,15 @@ aside {
     border-right: 3px solid #bbb;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
     height: calc(100vh - 2rem);
+}
+aside > header > div {
+    text-align: center;
+}
+aside > header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 4rem / 4rem;
 }
 aside > header > h1 {
     padding: 0.5rem;
@@ -22,9 +29,24 @@ nav {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    width: 100%;
+    padding: 0.5rem;
+    align-items: center;
 }
 nav>a {
     display: block;
+    text-decoration: none;
+    width: 7rem;
+}
+nav>a>i{margin: 0.5rem;}
+main {
+    padding: 0 1rem;
+    width: 100%;
+}
+main > header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 main .user-greeting-container > #hello {
     margin: 0;
@@ -43,11 +65,22 @@ main .main-top-menu .order-cta{
     padding: 1rem;
 }
 
+.card-container {
+    margin-bottom: 1rem;
+}
 .card-container > div {
     display: flex;
     gap: 1rem;
+    margin: 0.5rem;
 }
 .card-container .card {
-    width: 100px;
-    height: 100px;
+    min-width: 100px;
+    min-height: 100px;
+    background-color: orange;
+    border-radius: 1rem;
+    padding: 0.5rem;
+    color: white;
+    box-shadow: 0 0 1rem #000;
 }
+.card-container .card.purple{background-color: purple}
+.card-container .card.green{background-color: green}
