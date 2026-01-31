@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Date;
 import java.util.List;
 
 @Controller()
@@ -44,6 +45,7 @@ public class DashboardController {
     public String overviewDashboard(@RequestParam(name = "name", required = false, defaultValue = "World") String name,
                                     Model model) {
         model.addAttribute("name", name);
+        model.addAttribute("date", new Date());
         return "dashboard";
     }
 

@@ -1,80 +1,119 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1"/>
-        <title>FoodParadise | Dashboard</title>
-        <link href="/css/dashboard.css" rel="stylesheet"/>
-        <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.5.1/css/all.min.css}">
-    </head>
-    <body>
-        <!--<p th:text="|Hello, ${name}!|"></p>-->
-        <aside>
-            <header>
-                <h1>FoodParadise</h1>
-                <div>
-                    <img src="images/user-image.jpg" alt="profile image" />
-                    <p th:text="${param.name}">Simbi Ndoku</p>
-                </div>
-            </header>
-            <nav>
-                <a href="/dashboard"><i class="fa-solid fa-user"></i>Dashboard</a>
-                <a href="/explore"><i class="fa-solid fa-user"></i>Explore</a>
-                <a href="/dashboard/orders"><i class="fa-solid fa-user"></i>Orders</a>
-                <a href="/dashboard/my-dishes"><i class="fa-solid fa-user"></i>My Dishes</a>
-                <a href="/dashboard/settings"><i class="fa-solid fa-user"></i>Settings</a>
-            </nav>
-        </aside>
-        <main>
-            <header>
-                <div class="user-greeting-container">
-                    <p id="hello" th:text="|Hello, ${param.name}|">Hello, User</p>
-                    <p id="date">today is Monday, 24th of May 2026</p>
-                </div>
-                <div class="main-top-menu">
-                    <button class="order-cta">Make an Order</button>
-                </div>
-            </header>
-            <div>
-                <section id="order-section" class="card-container">
-                    <h2>Previous Orders</h2>
-                    <div>
-                        <div class="card">
-                            <p>Jollof rice</p>
-                            <p>Date</p>
-                            <span>Status: Processing</span>
-                        </div>
-                        <div class="card">
-                            <p>Jollof rice</p>
-                            <p>Date</p>
-                            <span>Status: On the way</span>
-                        </div>
-                        <div class="card">
-                            <p>Jollof rice</p>
-                            <p>Date</p>
-                            <span>Status : Delivered</span>
-                        </div>
-                    </div>
-                </section>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>FoodParadise | Premium Dashboard</title>
+    <link th:href="@{/css/dashboard.css}" rel="stylesheet"/>
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/6.5.1/css/all.min.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<aside class="sidebar">
+    <header>
+        <h1 id="logo"><i class="fa-solid fa-utensils"></i> FoodParadise</h1>
+        <div class="user-profile-box">
+            <img th:src="@{/images/user-image.jpg}" alt="profile image" class="avatar"/>
+            <div class="user-info">
+                <p class="user-name" th:text="${name}">Simbi Ndoku</p>
+                <span class="user-status">Premium Member</span>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <a href="/dashboard" class="nav-item active"><i class="fa fa-home"></i>Dashboard</a>
+        <a href="/menu" class="nav-item"><i class="fas fa-bread-slice"></i>Menu</a>
+        <a href="/dashboard/orders" class="nav-item"><i class="fa-solid fa-cart-shopping"></i>Orders</a>
+        <a href="/dashboard/my-dishes" class="nav-item"><i class="fas fa-hamburger"></i>My Dishes</a>
+        <a href="/dashboard/wallet" class="nav-item"><i class="fa-solid fa-wallet"></i>Wallet</a>
+        <a href="/dashboard/settings" class="nav-item"><i class="fa-solid fa-gear"></i>Settings</a>
+    </nav>
+    <div class="sidebar-promo">
+        <p>Get 20% off on your next order!</p>
+        <button class="promo-btn">View Voucher</button>
+    </div>
+</aside>
 
-                <div id="favorites-section" class="card-container">
-                    <h2>Dish favorites</h2>
-                    <div>
-                        <div class="card">
-                            <h3>Fried rice</h3>
-                            <span>2300</span>
-                        </div>
-                        <div class="card green">
-                            <h3>Italian Pizza</h3>
-                            <span>2300</span>
-                        </div>
-                        <div class="card purple">
-                            <h3>Lagos Burger</h3>
-                            <span>2300</span>
-                        </div>
+<main class="main-content">
+    <header class="main-header">
+        <div class="search-bar">
+            <i class="fa fa-search"></i>
+            <input type="text" placeholder="Search for food, chefs, or orders...">
+        </div>
+        <div class="header-actions">
+            <div class="notification-icon">
+                <i class="fa-regular fa-bell"></i>
+                <span class="dot"></span>
+            </div>
+            <button class="order-cta-primary"><i class="fa fa-plus"></i> New Order</button>
+        </div>
+    </header>
+
+    <section class="welcome-section">
+        <div class="greeting-text">
+            <h2 th:text="|Welcome back, ${name}!|">Welcome back, User!</h2>
+            <p class="subtext" th:text="${date}">Today is Monday, 24th of May 2026</p>
+        </div>
+    </section>
+
+    <section class="stats-grid">
+        <div class="stat-card">
+            <div class="stat-icon purple"><i class="fa-solid fa-bag-shopping"></i></div>
+            <div class="stat-details">
+                <h3>24</h3>
+                <p>Total Orders</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon green"><i class="fa-solid fa-wallet"></i></div>
+            <div class="stat-details">
+                <h3>₦45,000</h3>
+                <p>Wallet Balance</p>
+            </div>
+        </div>
+        <div class="stat-card">
+            <div class="stat-icon orange"><i class="fa-solid fa-star"></i></div>
+            <div class="stat-details">
+                <h3>120</h3>
+                <p>Points Earned</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="dashboard-grid">
+        <section id="order-section" class="card-container">
+            <div class="section-header">
+                <h2>Recent Orders</h2>
+                <a href="/dashboard/orders" class="view-all">See all</a>
+            </div>
+            <div class="order-list">
+                <div class="order-item" th:each="order : ${orders}">
+                    <div class="order-img-placeholder">🍲</div>
+                    <div class="order-info">
+                        <h4 th:text="${order.name}">Jollof Rice</h4>
+                        <p th:text="${order.date}">24 May, 2026</p>
+                    </div>
+                    <span class="status-badge" th:classappend="${#strings.toLowerCase(order.status)}" th:text="${order.status}">Processing</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="favorites-section" class="card-container">
+            <div class="section-header">
+                <h2>Your Favorites</h2>
+            </div>
+            <div class="favorites-grid">
+                <div class="fav-card">
+                    <div class="fav-image" style="background-image: url('images/pizza.jpg');"></div>
+                    <div class="fav-details">
+                        <h3>Italian Pizza</h3>
+                        <p class="price">₦3,500</p>
+                        <button class="reorder-btn">Add to Cart</button>
                     </div>
                 </div>
             </div>
-        </main>
-    </body>
+        </section>
+    </div>
+</main>
+</body>
 </html>
